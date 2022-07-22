@@ -1,8 +1,6 @@
-
-
 import {useState} from 'react';
 
-  function formSetDates() {
+    function FormSetDates() {
     const [activity, setActivity] = useState("");
     const [startTime, setStartTime] = useState("00:00");
     const [endTime, setEndTime] = useState("00:00");
@@ -33,4 +31,4 @@ import {useState} from 'react';
         </form>
     )
 }
-export default formSetDates;
+export  {FormSetDates}
