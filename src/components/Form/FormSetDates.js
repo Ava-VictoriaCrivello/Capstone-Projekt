@@ -21,7 +21,7 @@ import {useState} from 'react';
                 onChange={(e) => setStartTime(e.target.value)}
                 />
             </label>
-            <label>Zeit von:
+            <label>Zeit bis:
                 <input 
                 type= "time"
                 value={endTime}
