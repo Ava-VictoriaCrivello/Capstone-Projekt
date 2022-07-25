@@ -33,15 +33,18 @@ import {useState} from 'react';
                 <input 
                 type= "time"
                 value={startTime}
-                onChange={(e) => setStartTime(e.target.value)}
+                onChange={handleChange}
                 />
             </label>
             <label>Zeit bis:
                 <input 
                 type= "time"
                 value={endTime}
-                onChange={(e) => setEndTime(e.target.value)}
+                onChange={handleChange}
                 />
+            </label>
+            <label>Aktivität hinzufügen!
+                <input type= "submit"/>
             </label>
         </form>
     )
