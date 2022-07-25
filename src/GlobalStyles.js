@@ -30,11 +30,10 @@ export default styled.createGlobalStyle`
     border-bottom: 10px;
     padding: 40px;
     width: 100%;
-   
-    
     margin: 10px;
     background-color: grey;
   }
+  
   .input-Activity {
     
   }
@@ -42,15 +41,24 @@ export default styled.createGlobalStyle`
   .input-startTime {
     
   }
+
   .input-endTime {
     
   }
-.submit-Button--Form {
-  
-}
+
+  .submit--button-form {
+    
+  }
+
+  .input-time--Form {
+    display: flex;
+  }
+
   button,
   input,
   textarea {
     font: inherit;
   }
 `;
+
+//TODO http://getbem.com/introduction/

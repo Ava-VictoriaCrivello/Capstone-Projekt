@@ -1,22 +1,24 @@
-import { FormSetDates } from "./components/Form/FormSetDates";
-
-
-
+import { FormSetDates } from "./components/activity/FormSetDates";
+import { ActivityList } from "./components/activity/ActivityList";
+import { useState } from "react";
 
 export default function App() {
-  return (
-    <>
-    <heading>
-      <h1>Struct your Day</h1>
-    </heading>
-    
-    
-    
+  // State handling of activity list
+  const [activities, setActivity] = useState([]);
 
-    
-  <FormSetDates/>
+  const addActivity = (activity) => {
+    setActivity([...activities, activity]);
+  };
+
+  return (
+  <>
+    <header>
+      <h1>Struct your Day</h1>
+    </header>
+    <body>
+      <FormSetDates addActivity={addActivity}/>
+      <ActivityList activities={activities}/>
+    </body>
   </>
-  
   )
-  
 }
