@@ -16,8 +16,8 @@ import {useState} from 'react';
         const time = event.target.time;
         const value= event.taget.value;
         setActivity(values => ({value,[activity]: value}))
-        setStartTime(value => ({value,[time]: value}))
-        setEndTime(value => ({value, [time]: value}))
+        setStartTime(value => ({value,[startTime]: value}))
+        setEndTime(value => ({value, [endTime]: value}))
     }
 
     return (
@@ -40,13 +40,17 @@ import {useState} from 'react';
                 <input 
                 type= "time"
                 value={endTime}
-                onChange={handleChange}
+                onChange={handleChange} 
                 />
             </label>
-            <label>Aktivität hinzufügen!
-                <input type= "submit"/>
-            </label>
+            <button
+            type='submit'
+            className= 'submit-Button--Form'>
+                Aktivität Hinzufügen!
+
+            </button>
         </form>
+        
     )
 }
 
