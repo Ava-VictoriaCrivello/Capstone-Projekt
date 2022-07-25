@@ -18,15 +18,7 @@ export default styled.createGlobalStyle`
     font-family: sans-serif;
   }
 
-  .form-Container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    background-color: #f9e2ac;
-    padding: 5px;
-    margin: 5%;
-
-  }
+  
 
   button,
   input,
