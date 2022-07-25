@@ -6,50 +6,53 @@ import {useState} from 'react';
     const [startTime, setStartTime] = useState("00:00");
     const [endTime, setEndTime] = useState("00:00");
 
-    const handleSubmit = (event) => {
+    function handleSubmit(event){
         event.preventDefault();
+        const form = event.target;
+        const { activity, startTime, endTime} = form.elements;
+        setActivity(activity.value);
+        setStartTime(startTime.value);
+        setEndTime(endTime.value);
+
        
     }
 
-    const handleChange = (event) => {
-        const activity = event.target.activity;
-        const time = event.target.time;
-        const value= event.taget.value;
-        setActivity(values => ({value,[activity]: value}))
-        setStartTime(value => ({value,[startTime]: value}))
-        setEndTime(value => ({value, [endTime]: value}))
-    }
-
+   
     return (
+        <div className="formContainer">
         <form onSubmit={handleSubmit}>
             <label>Aktivität hinzufügen:
                 <input 
+                className="input-Activity"
                 type= "text"
                 value={activity}
-                onChange={handleChange}
-                />
+                onChange= {(e) => setActivity(e.target.value)} />
             </label>
             <label>Zeit von:
                 <input 
+                className="input-startTime"
                 type= "time"
                 value={startTime}
-                onChange={handleChange}
+                onChange={(e) => setStartTime(e.target.value)}
                 />
             </label>
             <label>Zeit bis:
                 <input 
+                className="input-endTime"
                 type= "time"
                 value={endTime}
-                onChange={handleChange} 
+                onChange={(e) => setEndTime(e.target.value)}
                 />
             </label>
-            <button
-            type='submit'
-            className= 'submit-Button--Form'>
-                Aktivität Hinzufügen!
-
-            </button>
+            <label> Aktivität hinzufügen!
+                <button
+                type= 'submit'
+                className= 'submit-Button--Form'>Jetzt 
+                Hinzufügen
+                </button>
+            </label>
         </form>
+        </div>
         
     )
 }
