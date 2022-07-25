@@ -7,6 +7,7 @@ import {useState} from 'react';
 
     return (
         <form>
+            <div className='form-container'>
             <label>Aktivität hinzufügen:
                 <input 
                 type= "text"
@@ -28,6 +29,7 @@ import {useState} from 'react';
                 onChange={(e) => setEndTime(e.target.value)}
                 />
             </label>
+            </div>
         </form>
     )
 }
