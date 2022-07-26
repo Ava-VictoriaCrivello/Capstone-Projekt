@@ -8,7 +8,7 @@ export default styled.createGlobalStyle`
     box-sizing: border-box;
   }
 
-  h1 {
+  #h1 {
     color: #BA5370;
   }
 
