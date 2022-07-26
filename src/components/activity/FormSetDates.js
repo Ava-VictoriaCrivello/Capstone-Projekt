@@ -1,4 +1,6 @@
 import {useState} from 'react';
+import styled from 'styled-components';
+
 
 function FormSetDates({onAddActivity}) {
     const [activity, setActivity] = useState({
@@ -23,7 +25,10 @@ function FormSetDates({onAddActivity}) {
    
     return (
         <div>
+            <StyledFormWrapper>
             <form onSubmit={handleSubmit}>
+                <div>
+                    <StyledFormLabel>
                 <label>Aktivität hinzufügen:
                     <input 
                     className="input-Activity"
@@ -33,7 +38,9 @@ function FormSetDates({onAddActivity}) {
                     value={activity.activity} 
                     onChange={handleChange}/>
                 </label>
-                <div>
+                </StyledFormLabel>
+                </div>
+                
                     <label>Zeit von:
                         <input 
                         className="input-startTime"
@@ -51,7 +58,7 @@ function FormSetDates({onAddActivity}) {
                         onChange={handleChange}
                         />
                     </label>
-                </div>
+                
                 <label> Aktivität hinzufügen!
                     <button
                     type= 'submit'
@@ -60,9 +67,34 @@ function FormSetDates({onAddActivity}) {
                     </button>
                 </label>
             </form>
+            </StyledFormWrapper>
         </div>
     )
 };
+
+const StyledFormWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30vh;
+  width: 40%;
+  border-color: black;
+  border-width: 3px;
+  border-style: double;
+  border-color: black;
+  background-color:lightgrey;`
+
+  const StyledFormLabel =  styled.label`
+  background-color: Black;
+  border-radius: 5%;
+  color: white;
+  padding: 5px;
+  margin: 5px;
+  `
+  
+  
+
+
 
 
 

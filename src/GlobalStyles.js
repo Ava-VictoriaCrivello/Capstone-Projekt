@@ -6,18 +6,18 @@ const styled = {createGlobalStyle};
 export default styled.createGlobalStyle`
   * {
     box-sizing: border-box;
-  }
-
-  #h1 {
-    color: #BA5370;
-  }
-
-  body {
     
+  }
+  body {
+    background-color: whitesmoke;
     max-width: "375";
     max-height: "667";
     font-size: 1.125rem;
     font-family: sans-serif;
+  }
+
+  *h1 { 
+    color: blue;
   }
 
 
