@@ -7,8 +7,8 @@ function FormSetDates({onAddActivity}) {
         endTime: "00:00",
       });
 
-      const AddActivity = onAddActivity(activity);
-      const SetActivity = setActivity({  activity: "", startTime: "00:00", endTime: "00:00", });
+      //const AddActivity = onAddActivity(activity);
+      //const SetActivity = setActivity({  activity: "", startTime: "00:00", endTime: "00:00", });
 
     const handleChange = (event) => {
         setActivity({ ...activity, [event.target.name]: event.target.value });
@@ -22,7 +22,7 @@ function FormSetDates({onAddActivity}) {
     };
    
     return (
-        <div className="formContainer">
+        <div>
             <form onSubmit={handleSubmit}>
                 <label>Aktivität hinzufügen:
                     <input 
@@ -33,7 +33,7 @@ function FormSetDates({onAddActivity}) {
                     value={activity.activity} 
                     onChange={handleChange}/>
                 </label>
-                <div className="input-time--Form">
+                <div>
                     <label>Zeit von:
                         <input 
                         className="input-startTime"
@@ -45,7 +45,6 @@ function FormSetDates({onAddActivity}) {
                     </label>
                     <label>Zeit bis:
                         <input 
-                        className="input-endTime"
                         type= "time"
                         name="endTime"
                         value={activity.endTime}
@@ -56,13 +55,15 @@ function FormSetDates({onAddActivity}) {
                 <label> Aktivität hinzufügen!
                     <button
                     type= 'submit'
-                    className= 'submit-Button--Form'>Jetzt 
+                    >Jetzt 
                     Hinzufügen
                     </button>
                 </label>
             </form>
         </div>
     )
-}
+};
+
+
 
 export {FormSetDates}

@@ -8,6 +8,10 @@ export default styled.createGlobalStyle`
     box-sizing: border-box;
   }
 
+  h1 {
+    color: #BA5370;
+  }
+
   body {
     
     max-width: "375";
@@ -24,4 +28,3 @@ export default styled.createGlobalStyle`
   }
 `
 
-//TODO http://getbem.com/introduction/
