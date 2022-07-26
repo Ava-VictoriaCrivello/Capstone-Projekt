@@ -21,7 +21,6 @@ export default function App() {
       
       <h1>Struct your Day</h1>
       <FormSetDates addActivity={addActivity}/>
-      <h2>Deine heutigen Termine:</h2>
       <ActivityList activities={activities}/>
     
   </>
