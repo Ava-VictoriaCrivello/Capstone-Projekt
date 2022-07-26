@@ -1,11 +1,14 @@
 import {useState} from 'react';
 
-function FormSetDates({addActivity}) {
+function FormSetDates({onAddActivity}) {
     const [activity, setActivity] = useState({
         activity: "",
         startTime: "00:00",
         endTime: "00:00",
       });
+
+      const AddActivity = onAddActivity(activity);
+      const SetActivity = setActivity({  activity: "", startTime: "00:00", endTime: "00:00", });
 
     const handleChange = (event) => {
         setActivity({ ...activity, [event.target.name]: event.target.value });
@@ -13,7 +16,8 @@ function FormSetDates({addActivity}) {
     
     const handleSubmit = (event) => {
     event.preventDefault();
-    addActivity(activity);
+    
+    onAddActivity(activity);
     setActivity({  activity: "", startTime: "00:00", endTime: "00:00", });
     };
    
