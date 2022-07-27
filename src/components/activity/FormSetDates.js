@@ -69,28 +69,19 @@ function FormSetDates({onAddActivity}) {
             </form>
             </StyledFormWrapper>
         </div>
+
     )
 };
 
 const StyledFormWrapper = styled.div`
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 30vh;
-  width: 40%;
-  border-color: black;
-  border-width: 3px;
-  border-style: double;
-  border-color: black;
-  background-color:lightgrey;`
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  flex: 1 0 50%;
+  background-color: lightgrey;
 
-  const StyledFormLabel =  styled.label`
-  background-color: Black;
-  border-radius: 5%;
-  color: white;
-  padding: 5px;
-  margin: 5px;
   `
+  const StyledFormLabel = styled.label
   
   
 
