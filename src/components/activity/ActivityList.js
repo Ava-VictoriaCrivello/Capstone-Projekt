@@ -14,4 +14,4 @@ function ActivityList({activities}) {
 
 export {ActivityList};
 
-  //TODO Added USer stories
+  
