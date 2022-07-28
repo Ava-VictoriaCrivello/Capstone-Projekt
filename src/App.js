@@ -10,7 +10,7 @@ import { FormStyles } from "./components/activity/styles/FormInput.styles";
 const theme = {
   colors: {
     header: 'white',
-    body: 'rose',
+    body:   'rose',
     footer: 'lightgrey'
   }
 }
@@ -45,6 +45,11 @@ export default function App() {
       </ThemeProvider>
   );
 }
+
+//<div>
+//<FormInput addActivity={addActivity}/>
+//<ActivityList activities={activities}/>
+//</div>
 
 const StyledWrapper = styled.main`
 max-width: 860px;

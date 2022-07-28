@@ -1,49 +1,46 @@
 import {useState} from 'react';
 
-
-
-
-
-    function FormInput() {
-    const [activity, setActivity] = useState("");
-    const [startTime, setStartTime] = useState("00:00");
-    const [endTime, setEndTime] = useState("00:00");
+function FormInput({addActivity}) {
+    const [activity, setActivity] = useState({
+        activity: "",
+        startTime: "00:00",
+        endTime: "00:00",
+      });
 
     function handleSubmit(event){
         event.preventDefault();
-        const form = event.target;
-        const {activity, startTime, endTime} = form.elements;
-        setActivity(activity.value);
-        setStartTime(startTime.value);
-        setEndTime(endTime.value);
-
-       
+        addActivity(activity);
+        setActivity({ activity: "", startTime: "00:00", endTime: "00:00" });
     }
-
+   
+    const handleChange = (event) => {
+        console.log(event.target.value);
+        setActivity({ ...activity, [event.target.name]: event.target.value });
+    };
    
     return (
-        
-        
         <form onSubmit={handleSubmit}>
             <label>Aktivität hinzufügen:
-            
                 <input 
                 type= "text"
-                value={activity}
-                onChange= {(e) => setActivity(e.target.value)} />
+                name="activity"
+                value={activity.activity}
+                onChange= {handleChange} />
             </label>
             <label>Zeit von:
                 <input 
                 type= "time"
-                value={startTime}
-                onChange={(e) => setStartTime(e.target.value)}
+                name="startTime"
+                value={activity.startTime}
+                onChange={handleChange}
                 />
             </label>
             <label>Zeit bis:
                 <input 
                 type= "time"
-                value={endTime}
-                onChange={(e) => setEndTime(e.target.value)}
+                name="endTime"
+                value={activity.endTime}
+                onChange={handleChange}
                 />
             </label>
             <label> Aktivität hinzufügen!
@@ -56,7 +53,6 @@ import {useState} from 'react';
                 </div>
             </label>
         </form>
-        
     )
 }
 
