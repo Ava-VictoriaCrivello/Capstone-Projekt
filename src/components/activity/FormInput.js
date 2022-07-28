@@ -1,7 +1,10 @@
 import {useState} from 'react';
 
 
-    function FormSetDates() {
+
+
+
+    function FormInput() {
     const [activity, setActivity] = useState("");
     const [startTime, setStartTime] = useState("00:00");
     const [endTime, setEndTime] = useState("00:00");
@@ -9,7 +12,7 @@ import {useState} from 'react';
     function handleSubmit(event){
         event.preventDefault();
         const form = event.target;
-        const { activity, startTime, endTime} = form.elements;
+        const {activity, startTime, endTime} = form.elements;
         setActivity(activity.value);
         setStartTime(startTime.value);
         setEndTime(endTime.value);
@@ -19,9 +22,11 @@ import {useState} from 'react';
 
    
     return (
-        <div className="formContainer">
+        
+        
         <form onSubmit={handleSubmit}>
             <label>Aktivität hinzufügen:
+            
                 <input 
                 type= "text"
                 value={activity}
@@ -42,16 +47,17 @@ import {useState} from 'react';
                 />
             </label>
             <label> Aktivität hinzufügen!
+            <div>
                 <button
                 type= 'submit'
                 >Jetzt 
                 Hinzufügen
                 </button>
+                </div>
             </label>
         </form>
-        </div>
         
     )
 }
 
-export  {FormSetDates}
+export  {FormInput}

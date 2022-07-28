@@ -1,12 +1,19 @@
-import { FormSetDates } from "./components/activity/FormSetDates";
+import { FormInput } from "./components/activity/FormInput";
 import { ActivityList } from "./components/activity/ActivityList";
 import { useState } from "react";
-import styled from 'styled-components';
+import styled from 'styled-components'
+import { ThemeProvider } from "styled-components";
+import { StyleHeader,Nav } from "./components/activity/styles/Header.styles";
+import { FormStyles } from "./components/activity/styles/FormInput.styles";
 
 
-
-
-
+const theme = {
+  colors: {
+    header: 'white',
+    body: 'rose',
+    footer: 'lightgrey'
+  }
+}
 
 
 export default function App() {
@@ -18,27 +25,35 @@ export default function App() {
   };
 
   return (
-  <>
-  
-      <>
-      <Header>
-      <h1>Struct your Day</h1>
-      </Header>
-      </>
-      <FormSetDates addActivity={addActivity}/>
-      <h2>Deine heutigen Termine:</h2>
+    <ThemeProvider theme = {theme}>
+      <StyledWrapper>
+      <Nav>
+      <img width={200}
+       height={200}
+       src="./images/logo.png" alt="logo"/>
+       <h1> Struct your Day</h1>
+      </Nav>
+      <StyleHeader>
+        <h2>Deine Zeit des Tages optimal genutzt!</h2>
+        <h2> Einfach weil unsere Zeit zu kostbar ist</h2>
+    </StyleHeader>
+      <FormStyles>
+      <FormInput addActivity={addActivity}/>
+      </FormStyles>
       <ActivityList activities={activities}/>
-    
-  </>
-  )
-};
+      </StyledWrapper>
+      </ThemeProvider>
+  );
+}
 
-const Header = styled.h1`
-font-family: 'Cormorant SC, serif';
-justify-content: center;
+const StyledWrapper = styled.main`
+max-width: 860px;
+margin: 0;
+padding: 25px;
+display: flex;
+flex-direction: column;
 align-items: center;
-color: salmon;
-width: 100%;
-height:20%;`
+gap: 20px;
+`
 
 

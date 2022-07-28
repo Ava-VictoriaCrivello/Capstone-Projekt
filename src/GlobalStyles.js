@@ -9,17 +9,15 @@ export default styled.createGlobalStyle`
     
   }
   body {
-    background-color: grey;
+    background-color: white;
     max-width: "375";
     max-height: "667";
     font-size: 1.125rem;
     font-family: sans-serif;
   }
 
-  *h1 { 
-    color: blue;
-  }
-
+  
+  
 
   button,
   input,
