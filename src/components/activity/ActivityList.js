@@ -1,11 +1,11 @@
-import styled from "styled-components";
+
 
 
 
 function ActivityList({activities}) {
     return (
       
-      <div name={ListEntrie}>
+      <div>
         {activities.map((activity) => (
           <div key={activity.activity}>
             <p>{activity.activity}</p>
@@ -18,8 +18,7 @@ function ActivityList({activities}) {
     );
 }
 
-const ListEntrie = styled.div`
-background-color: grey`
+
 
 export {ActivityList};
 

@@ -9,7 +9,7 @@ export default styled.createGlobalStyle`
     
   }
   body {
-    background-color: whitesmoke;
+    background-color: grey;
     max-width: "375";
     max-height: "667";
     font-size: 1.125rem;
