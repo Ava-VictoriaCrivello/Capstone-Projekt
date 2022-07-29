@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
- export const FormStyles = styled.form`
+export const FormStyles = styled.form`
   width: 100%;
   background-color: #fff;
   box-shadow: 0 8px 8px rgba(102, 102, 102, 0.05);
@@ -15,11 +15,11 @@ import styled from "styled-components";
 
   input {
     width: 200px;
-padding: 6px 10px;
-margin: 10px 0;
-border: 1px solid #ddd;
-box-sizing: border-box;
-display: block;
+    padding: 6px 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    display: block;
   }
 
   button {
@@ -28,8 +28,7 @@ display: block;
     border: 0;
     border-radius: 8px;
     width: 200px;
-padding: 6px 10px;
-margin: 10px 0;
+    padding: 6px 10px;
+    margin: 10px 0;
   }
-  `
- 
+`;

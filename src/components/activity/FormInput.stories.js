@@ -1,8 +1,6 @@
-import { FormInput } from "./FormSetDates";
+import {FormInput} from './FormSetDates';
 
 export default {
-    title: "Form",
-    component: FormInput
-
+  title: 'Form',
+  component: FormInput,
 };
-

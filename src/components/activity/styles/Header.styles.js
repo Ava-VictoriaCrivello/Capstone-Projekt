@@ -1,30 +1,25 @@
 import styled from 'styled-components';
 
-export const Nav = styled.h1`
-color: black;
-text-align: center;`
-
 export const StyleHeader = styled.header`
-background-color: ${({theme}) => theme.colors.header };
-padding: 40px;
-width: 100%;
-height: 200px;
+  background-color: ${({theme}) => theme.colors.header};
 
+  img {
+    text-align: center;
+  }
 
-
-
-
-h2 {
+  h1 {
     color: black;
     text-align: center;
-}
+    font-size: medium;
+  }
 
-    &:hover {
-        background-color: 'black';
-    }
+  h2 {
+    color: black;
+    text-align: center;
+    font-size: small;
+  }
 
-    
-    
-    
-`
-
+  &:hover {
+    background-color: 'black';
+  }
+`;
