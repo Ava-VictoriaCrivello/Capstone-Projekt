@@ -4,6 +4,11 @@ import {useState} from 'react';
 import styled from 'styled-components';
 import {ThemeProvider} from 'styled-components';
 import {StyleHeader} from './components/activity/styles/Header.styles';
+import {Navbar} from './components/activity/Navbar';
+
+
+
+
 
 
 const theme = {
@@ -28,11 +33,21 @@ export default function App() {
   return (
     <StyledWrapper>
       <ThemeProvider theme={theme}>
+        
+        
+        
+       <Navbar/>
+        
+        
+        
+        
         <StyleHeader>
+          <main>
           <img width={200} height={200} src="./images/logo.png" alt="logo" />
-          <h1> Structure your Day</h1>
-          <h2>Deine Zeit des Tages optimal genutzt!</h2>
-          <h2> Einfach weil unsere Zeit zu kostbar ist.</h2>
+          <h1>Deine Zeit des Tages optimal genutzt!</h1>
+          
+          
+          </main>
         </StyleHeader>
         <div>
           <FormInput addActivity={addActivity} />
@@ -46,6 +61,12 @@ export default function App() {
   );
 }
 
+
+
+
+
+ 
+
 const StyledWrapper = styled.main`
   max-width: 860px;
   margin: 0;
@@ -54,4 +75,17 @@ const StyledWrapper = styled.main`
   flex-direction: column;
   align-items: center;
   gap: 20px;
+
+main {
+  width: auto;
+  
+  display: flex;
+justify-content: space-between;
+align-items: center;
+gap: 2rem;
+padding: 0 1rem;
+
+
+
+}
 `;
