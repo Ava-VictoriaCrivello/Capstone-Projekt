@@ -24,9 +24,19 @@ function FormInput({addActivity}) {
   return (
     <FormStyles onSubmit={handleSubmit}>
       <label>
-        Aktivität hinzufügen:
+        Wann beginnt dein Tag?
+        <input type="time" name="dayStartTime" value={activity.dayStartTime} onChange={handleChange} />
+      </label>
+      <label>
+        Wann endet dein Tag?
+        <input type="time" name="dayEndTime" value={activity.dayEndTime} onChange={handleChange} />
+      </label>
+
+      <label>
+        Heutige Aktivitäten?
         <input type="text" name="activity" value={activity.activity} onChange={handleChange} />
       </label>
+
       <label>
         Zeit von:
         <input type="time" name="startTime" value={activity.startTime} onChange={handleChange} />

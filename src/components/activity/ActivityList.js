@@ -10,6 +10,8 @@ function ActivityList({activities, onHandleDelete}) {
       {activities.map(activity => (
         <div key={activity.id}>
           <StyledActivitiList>
+            <p>{activity.dayStartTime}</p>
+            <p>{activity.dayEndTime}</p>
             <p>{activity.activity}</p>
             <p>{activity.startTime}</p>
             <p>{activity.endTime}</p>

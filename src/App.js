@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import {ThemeProvider} from 'styled-components';
 import {StyleHeader} from './components/activity/styles/Header.styles';
 
+
 const theme = {
   colors: {
     header: 'white',
@@ -29,17 +30,19 @@ export default function App() {
       <ThemeProvider theme={theme}>
         <StyleHeader>
           <img width={200} height={200} src="./images/logo.png" alt="logo" />
-          <h1> Struct your Day</h1>
+          <h1> Structure your Day</h1>
           <h2>Deine Zeit des Tages optimal genutzt!</h2>
-          <h2> Einfach weil unsere Zeit zu kostbar ist</h2>
+          <h2> Einfach weil unsere Zeit zu kostbar ist.</h2>
         </StyleHeader>
-
         <div>
           <FormInput addActivity={addActivity} />
           <ActivityList activities={activities} onHandleDelete={removeActivity} />
         </div>
+        
       </ThemeProvider>
+      
     </StyledWrapper>
+    
   );
 }
 
