@@ -6,10 +6,13 @@ function ActivityList({activities, onHandleDelete}) {
     onHandleDelete(activityId);
   };
   return (
-    <>
+    <><div>
+      <label>Aufgaben des Tages</label>
+    </div>
       {activities.map(activity => (
         <div key={activity.id}>
           <StyledActivitiList>
+            <label>Deine Tag:</label>
             <p>{activity.dayStartTime}</p>
             <p>{activity.dayEndTime}</p>
             <p>{activity.activity}</p>

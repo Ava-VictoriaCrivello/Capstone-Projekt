@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import {Link, useMatch, useResolvedPath} from 'react-router-dom';
 
 function Navbar() {
   return (
@@ -6,25 +7,11 @@ function Navbar() {
       <>
         <main>
           <nav>
-            <ul>
-              <a href="/">
-                <h3>Structure your Day</h3>
-              </a>
+            <img width={180} height={180} src="./images/logo.png" alt="logo" />
+            <Link to="/">Structure your Day</Link>
 
-              <a href="/listEntries">
-                <label>Einträge</label>
-              </a>
-
-              
-              
-
-              <a href="/Calendar">
-                <label>Kalender</label>
-              </a>
-              
-              
-              
-            </ul>
+            <CustomLink to="/listEntries">Einträge</CustomLink>
+            <CustomLink to="/Calendar">Kalender</CustomLink>
           </nav>
         </main>
       </>
@@ -32,24 +19,40 @@ function Navbar() {
   );
 }
 
+function CustomLink({to, children, ...props}) {
+  const resolvePath = useResolvedPath(to);
+  const isActive = useMatch({path: resolvePath.pathname, end: true});
+
+  return (
+    <li className={isActive ? 'active' : ''}>
+      <Link to={to} {...props}>
+        {children}
+      </Link>
+    </li>
+  );
+}
+
 const StyledNavigation = styled.main`
-  box-sizing: border-box;
-  width:  auto;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 8px 8px rgba(102, 102, 102, 0.05);
+  border-radius: 1rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
 
   nav {
-    background-color: #3f3c3b;
+    background-color: white;
     color: white;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: stretch;
     gap: 2rem;
     padding: 0 1rem;
   }
 
-  nav a {
-    color: inherit;
-    text-decoration: none;
-    float: left;
+  nav li {
+    color: grey;
+    float: center;
     color: #f2f2f2;
     text-align: center;
     padding: 14px 16px;
@@ -57,19 +60,12 @@ const StyledNavigation = styled.main`
     font-size: 17px;
   }
 
-  label {
-    font-size: 1rem;
+  nav a {
+    color: black;
   }
-  h3 {
-    font-size: 1.25rem;
-  }
-
-  nav ul {
-    padding: 0;
-    margin: 0;
-
-    display: flex;
-    gap: 1rem;
+  nav a:hover {
+    background-color: #ddd;
+    color: salmon;
   }
 `;
 

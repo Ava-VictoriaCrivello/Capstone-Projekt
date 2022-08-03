@@ -2,22 +2,12 @@ import {FormInput} from './components/activity/FormInput';
 import {ActivityList} from './components/activity/ActivityList';
 import {useState} from 'react';
 import styled from 'styled-components';
-import {ThemeProvider} from 'styled-components';
-import {StyleHeader} from './components/activity/styles/Header.styles';
+
 import {Navbar} from './components/activity/Navbar';
-
-
-
-
-
-
-const theme = {
-  colors: {
-    header: 'white',
-    body: 'rose',
-    footer: 'lightgrey',
-  },
-};
+import {Homepage} from './components/activity/Hompage';
+import {ListEntries} from './components/activity/ListEntris';
+import {Calendar} from './components/activity/Calendar';
+import {Route, Routes} from 'react-router-dom';
 
 export default function App() {
   const [activities, setActivity] = useState([]);
@@ -32,40 +22,21 @@ export default function App() {
 
   return (
     <StyledWrapper>
-      <ThemeProvider theme={theme}>
-        
-        
-        
-       <Navbar/>
-        
-        
-        
-        
-        <StyleHeader>
-          <main>
-          <img width={200} height={200} src="./images/logo.png" alt="logo" />
-          <h1>Deine Zeit des Tages optimal genutzt!</h1>
-          
-          
-          </main>
-        </StyleHeader>
-        <div>
-          <FormInput addActivity={addActivity} />
-          <ActivityList activities={activities} onHandleDelete={removeActivity} />
-        </div>
-        
-      </ThemeProvider>
-      
+      <Navbar>
+        <img width={130} height={130} src="./images/logo.png" alt="logo" />
+      </Navbar>
+
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/listEntries" element={<ListEntries />} />
+        <Route path="/Calendar" element={<Calendar />} />
+      </Routes>
+
+      <FormInput addActivity={addActivity} />
+      <ActivityList activities={activities} onHandleDelete={removeActivity} />
     </StyledWrapper>
-    
   );
 }
-
-
-
-
-
- 
 
 const StyledWrapper = styled.main`
   max-width: 860px;
@@ -76,16 +47,25 @@ const StyledWrapper = styled.main`
   align-items: center;
   gap: 20px;
 
-main {
-  width: auto;
-  
-  display: flex;
-justify-content: space-between;
-align-items: center;
-gap: 2rem;
-padding: 0 1rem;
-
-
-
-}
+  main {
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    padding: 0 1rem;
+  }
+  img {
+    text-align: center;
+  }
+  h1 {
+    color: black;
+    text-align: center;
+    font-size: medium;
+  }
+  h2 {
+    color: black;
+    text-align: center;
+    font-size: small;
+  }
 `;

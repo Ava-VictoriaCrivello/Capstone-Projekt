@@ -8,6 +8,8 @@ function FormInput({addActivity}) {
     activity: '',
     startTime: '00:00',
     endTime: '00:00',
+    dayStartTime: '00:00',
+    dayEndTime: '00:00'
   });
 
   function handleSubmit(event) {
