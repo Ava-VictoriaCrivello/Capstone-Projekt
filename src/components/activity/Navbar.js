@@ -6,12 +6,18 @@ function Navbar() {
     <StyledNavigation>
       <>
         <main>
-          <nav>
+          <header>
             <img width={180} height={180} src="./images/logo.png" alt="logo" />
-            <Link to="/">Structure your Day</Link>
+            <h1>Structure your Day</h1>
+            <h2>Deine Zeit optimal genutzt!</h2>
+            <h2>Weil unsere Zeit zu kostbar ist!</h2>
+          </header>
+
+          <nav>
+            <CustomLink to="/">Homepage</CustomLink>
 
             <CustomLink to="/listEntries">Einträge</CustomLink>
-            <CustomLink to="/Calendar">Kalender</CustomLink>
+            <CustomLink to="/Calendar">Todos</CustomLink>
           </nav>
         </main>
       </>
@@ -66,6 +72,15 @@ const StyledNavigation = styled.main`
   nav a:hover {
     background-color: #ddd;
     color: salmon;
+  }
+
+  header {
+    width: 200px;
+    padding: 6px 10px;
+    margin: 10px 0;
+    border: 1px #ddd;
+    box-sizing: border-box;
+    display: block;
   }
 `;
 

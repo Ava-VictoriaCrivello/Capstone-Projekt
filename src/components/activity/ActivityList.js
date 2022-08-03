@@ -22,6 +22,7 @@ function ActivityList({activities, onHandleDelete}) {
               Eintrag löschen
             </StyledButton>
           </StyledActivitiList>
+          
         </div>
       ))}
     </>

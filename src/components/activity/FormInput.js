@@ -2,6 +2,7 @@ import {useState} from 'react';
 import {FormStyles} from './styles/FormInput.styles';
 import {nanoid} from 'nanoid';
 
+
 function FormInput({addActivity}) {
   const [activity, setActivity] = useState({
     id: nanoid(),
@@ -25,6 +26,7 @@ function FormInput({addActivity}) {
 
   return (
     <FormStyles onSubmit={handleSubmit}>
+      <h1>Einträge</h1>
       <label>
         Wann beginnt dein Tag?
         <input type="time" name="dayStartTime" value={activity.dayStartTime} onChange={handleChange} />
@@ -54,6 +56,8 @@ function FormInput({addActivity}) {
           <button type="submit">Jetzt Hinzufügen</button>
         </div>
       </label>
+      
+
     </FormStyles>
   );
 }
