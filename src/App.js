@@ -1,35 +1,23 @@
-import {FormInput} from './components/activity/FormInput';
-import {ActivityList} from './components/activity/ActivityList';
-import {useState} from 'react';
 import styled from 'styled-components';
-
 import {Navbar} from './components/activity/Navbar';
 import {Homepage} from './components/activity/Hompage';
-
+import {FormAndList} from './FormAndList';
 import {ToDos} from './components/activity/ToDos';
 import {Route, Routes} from 'react-router-dom';
 
 export default function App() {
-  const [activities, setActivity] = useState([]);
-
-  const addActivity = activity => {
-    setActivity([...activities, activity]);
-  };
-  const removeActivity = activity => {
-    console.log(activity);
-    setActivity(current => current.filter(obj => obj.id !== activity));
-  };
-
   return (
     <StyledWrapper>
-      <Navbar>
-        <img width={130} height={130} src="./images/logo.png" alt="logo" />
-      </Navbar>
+      <Navbar />
+      <header>
+        <img width={180} height={180} src="./images/logo.png" alt="logo" />
+
+        <h1>Structure your Day</h1>
+      </header>
 
       <Routes>
         <Route path="/" element={<Homepage />} />
-        <Route path="/listEntries" element={<FormInput addActivity={addActivity} />} />
-        <Route path="/listEntries" element={<ActivityList activities={activities} onHandleDelete={removeActivity} />} />
+        <Route path="/listEntries" element={<FormAndList />} />
         <Route path="/Calendar" element={<ToDos />} />
       </Routes>
     </StyledWrapper>
@@ -45,14 +33,6 @@ const StyledWrapper = styled.main`
   align-items: center;
   gap: 20px;
 
-  main {
-    width: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 2rem;
-    padding: 0 1rem;
-  }
   img {
     text-align: center;
   }
@@ -65,5 +45,14 @@ const StyledWrapper = styled.main`
     color: black;
     text-align: center;
     font-size: small;
+  }
+  header {
+    max-width: '375';
+    max-height: '667';
+    background-color: #fff;
+    box-shadow: 0 8px 8px rgba(102, 102, 102, 0.05);
+    border-radius: 1rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
   }
 `;

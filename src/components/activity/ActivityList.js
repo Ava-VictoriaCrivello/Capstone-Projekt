@@ -6,15 +6,14 @@ function ActivityList({activities, onHandleDelete}) {
     onHandleDelete(activityId);
   };
   return (
-    <><div>
-      <label>Aufgaben des Tages</label>
-    </div>
+    <>
+      <div>
+        <label>Aufgaben des Tages</label>
+      </div>
       {activities.map(activity => (
         <div key={activity.id}>
           <StyledActivitiList>
-            <label>Deine Tag:</label>
-            <p>{activity.dayStartTime}</p>
-            <p>{activity.dayEndTime}</p>
+            <label>Dein Tag:</label>
             <p>{activity.activity}</p>
             <p>{activity.startTime}</p>
             <p>{activity.endTime}</p>
@@ -22,7 +21,6 @@ function ActivityList({activities, onHandleDelete}) {
               Eintrag löschen
             </StyledButton>
           </StyledActivitiList>
-          
         </div>
       ))}
     </>
@@ -30,6 +28,9 @@ function ActivityList({activities, onHandleDelete}) {
 }
 
 const StyledActivitiList = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  margin: 1rem 0 0.25rem 0;
   background: whitesmoke;
   margin: 5px;
   border-radius: 8px;
@@ -40,7 +41,7 @@ const StyledActivitiList = styled.div`
   border: 10px solid;
   color: black;
   border: 0;
-  width: 200px;
+  width: auto;
   padding: 6px 10px;
   margin: 10px 0;
 `;

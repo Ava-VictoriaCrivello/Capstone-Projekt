@@ -6,16 +6,8 @@ function Navbar() {
     <StyledNavigation>
       <>
         <main>
-          <header>
-            <img width={180} height={180} src="./images/logo.png" alt="logo" />
-            <h1>Structure your Day</h1>
-            <h2>Deine Zeit optimal genutzt!</h2>
-            <h2>Weil unsere Zeit zu kostbar ist!</h2>
-          </header>
-
           <nav>
             <CustomLink to="/">Homepage</CustomLink>
-
             <CustomLink to="/listEntries">Einträge</CustomLink>
             <CustomLink to="/Calendar">Todos</CustomLink>
           </nav>
@@ -39,7 +31,8 @@ function CustomLink({to, children, ...props}) {
 }
 
 const StyledNavigation = styled.main`
-  width: 100%;
+  max-width: '375';
+  max-height: '667';
   background-color: #fff;
   box-shadow: 0 8px 8px rgba(102, 102, 102, 0.05);
   border-radius: 1rem;
@@ -50,6 +43,8 @@ const StyledNavigation = styled.main`
     background-color: white;
     color: white;
     display: flex;
+    max-width: '375';
+    max-height: '667';
     justify-content: space-between;
     align-items: stretch;
     gap: 2rem;
@@ -75,7 +70,8 @@ const StyledNavigation = styled.main`
   }
 
   header {
-    width: 200px;
+    max-width: '375';
+    max-height: '667';
     padding: 6px 10px;
     margin: 10px 0;
     border: 1px #ddd;
