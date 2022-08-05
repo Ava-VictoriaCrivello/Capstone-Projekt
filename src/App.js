@@ -1,8 +1,11 @@
 import styled from 'styled-components';
+
 import {Navbar} from './components/activity/Navbar';
 import {Homepage} from './components/activity/Hompage';
+
 import {FormAndList} from './FormAndList';
-import {ToDos} from './components/activity/ToDos';
+import {TodoList} from './TodoList';
+
 import {Route, Routes} from 'react-router-dom';
 
 export default function App() {
@@ -11,14 +14,12 @@ export default function App() {
       <Navbar />
       <header>
         <img width={180} height={180} src="./images/logo.png" alt="logo" />
-
         <h1>Structure your Day</h1>
       </header>
-
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/listEntries" element={<FormAndList />} />
-        <Route path="/Calendar" element={<ToDos />} />
+        <Route path="/Calendar" element={<TodoList />} />
       </Routes>
     </StyledWrapper>
   );
