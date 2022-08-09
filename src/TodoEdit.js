@@ -27,8 +27,8 @@ function TodoEdit({todos, completeTodo, removeTodo, updateTodo}) {
         {todo.text}
       </aside>
       <span>
-        <RiCloseCircleLine onClick={() => removeTodo(todo.id)} className="delete-icon" />
-        <TiEdit onClick={() => setEdit({id: todo.id, value: todo.text})} className="edit-icon" />
+        <RiCloseCircleLine onClick={() => removeTodo(todo.id)}/>
+        <TiEdit onClick={() => setEdit({id: todo.id, value: todo.text})}/>
       </span>
     </StyledComplete>
   ));
@@ -37,9 +37,11 @@ function TodoEdit({todos, completeTodo, removeTodo, updateTodo}) {
 const StyledComplete = styled.div`
   max-width: '375';
   max-height: '667';
-  padding: 16px;
+
+  padding: 1rem;
+  margin-bottom: 1rem;
   border: none;
-  border-radius: 0 4px 4px 0;
+  border-style: solid;
   cursor: pointer;
   outline: none;
   background: linear-gradient(90deg, rgba(126, 119, 119) 0%, rgba(179, 143, 143) 100%);

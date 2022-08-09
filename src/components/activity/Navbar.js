@@ -6,10 +6,15 @@ function Navbar() {
     <StyledNavigation>
       <>
         <main>
+          <header>
+            <img width={180} height={180} src="./images/logo.png" alt="logo" />
+            <h2>Structure your Day</h2>
+          </header>
+
           <nav>
             <CustomLink to="/">Homepage</CustomLink>
             <CustomLink to="/listEntries">Einträge</CustomLink>
-            <CustomLink to="/Calendar">Todos</CustomLink>
+            <CustomLink to="/todos">Todos</CustomLink>
           </nav>
         </main>
       </>
@@ -31,13 +36,25 @@ function CustomLink({to, children, ...props}) {
 }
 
 const StyledNavigation = styled.main`
-  max-width: '375';
-  max-height: '667';
-  background-color: #fff;
-  box-shadow: 0 8px 8px rgba(102, 102, 102, 0.05);
-  border-radius: 1rem;
+display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  width: 100%;
+  margin: 1rem auto;
   padding: 1rem;
-  margin-bottom: 1rem;
+  border-radius: 12px;
+  background-color: rgba(255,255,255, 0.2);
+
+
+
+
+
+
+  
+  
+  
+  
+  
 
   nav {
     background-color: white;

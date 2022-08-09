@@ -28,33 +28,24 @@ function ActivityList({activities, onHandleDelete}) {
 }
 
 const StyledActivitiList = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  margin: 1rem 0 0.25rem 0;
-  background: whitesmoke;
-  margin: 5px;
-  border-radius: 8px;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-
-  border: 10px solid;
-  color: black;
-  border: 0;
-  width: auto;
-  padding: 6px 10px;
-  margin: 10px 0;
+  max-width: '375';
+  max-height: '667';
+  background-color: #fff;
+  box-shadow: 0 8px 8px rgba(102, 102, 102, 0.05);
+  border-radius: 1rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
 `;
 
 const StyledButton = styled.button`
-  background: grey;
   color: #fff;
-  border: 0;
-  border-radius: 8px;
-  border-style: solid;
-  width: 180px;
-  padding: 6px 10px;
-  margin: 10px 0;
+  text-transform: capitalize;
+  padding: 16px;
+  border: none;
+
+  cursor: pointer;
+  outline: none;
+  background: linear-gradient(90deg, rgba(226, 161, 161) 0%, rgba(187, 129, 129) 100%);
 `;
 
 export {ActivityList};

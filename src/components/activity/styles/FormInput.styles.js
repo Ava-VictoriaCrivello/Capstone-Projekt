@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
 export const FormStyles = styled.form`
-  width: 100%;
+  max-width: '375';
+  max-height: '667';
   background-color: #fff;
   box-shadow: 0 8px 8px rgba(102, 102, 102, 0.05);
   border-radius: 1rem;
@@ -23,12 +24,14 @@ export const FormStyles = styled.form`
   }
 
   button {
-    background: salmon;
     color: #fff;
-    border: 0;
-    border-radius: 8px;
     width: 200px;
-    padding: 6px 10px;
-    margin: 10px 0;
+
+    text-transform: capitalize;
+    padding: 16px;
+    border: none;
+
+    outline: none;
+    background: linear-gradient(90deg, rgba(226, 161, 161) 0%, rgba(187, 129, 129) 100%);
   }
 `;

@@ -25,11 +25,11 @@ function TodosForm(props) {
   };
 
   return (
-    <StyledTodoForm onSubmit={handleSubmit} className="todo-form">
+    <StyledTodoForm onSubmit={handleSubmit}>
       {props.edit ? (
         <>
           <input value={input} onChange={handleChange} name="text" ref={inputRef} className="todo-input edit" />
-          <button onClick={handleSubmit} className="todo-button edit">
+          <button onClick={handleSubmit} >
             Updates deines todos
           </button>
         </>
@@ -40,10 +40,10 @@ function TodosForm(props) {
             value={input}
             onChange={handleChange}
             name="text"
-            className="todo-input"
+            
             ref={inputRef}
           />
-          <button onClick={handleSubmit} className="todo-button">
+          <button onClick={handleSubmit}>
             Todo Hinzufügen
           </button>
         </>
@@ -65,14 +65,12 @@ const StyledTodoForm = styled.form`
   padding-bottom: 32px;
 
   input {
-    padding: 14px 32px 14px 16px;
-    border-radius: 4px 0 0 4px;
-    border: 2px solid;
-    outline: none;
-    width: 320px;
-    background: transparent;
-    color: black;
-    gap: 20px;
+    width: 200px;
+    padding: 6px 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    display: block;
   }
 
   button {
@@ -80,7 +78,7 @@ const StyledTodoForm = styled.form`
     text-transform: capitalize;
     padding: 16px;
     border: none;
-    border-radius: 0 4px 4px 0;
+    gap: 20%;
     cursor: pointer;
     outline: none;
     background: linear-gradient(90deg, rgba(226, 161, 161) 0%, rgba(187, 129, 129) 100%);
